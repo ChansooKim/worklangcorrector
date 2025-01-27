@@ -1,7 +1,7 @@
 package com.csk.worklangcorrector.config;
 
-import com.csk.worklangcorrector.model.CorrectionRequest;
-import com.csk.worklangcorrector.model.CorrectionResponse;
+import com.csk.worklangcorrector.dto.CorrectionRequest;
+import com.csk.worklangcorrector.dto.CorrectionResponse;
 import com.csk.worklangcorrector.service.TextCorrectionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

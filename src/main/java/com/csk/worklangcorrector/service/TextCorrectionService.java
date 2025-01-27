@@ -1,7 +1,7 @@
 package com.csk.worklangcorrector.service;
 
-import com.csk.worklangcorrector.model.CorrectionRequest;
-import com.csk.worklangcorrector.model.CorrectionResponse;
+import com.csk.worklangcorrector.dto.CorrectionRequest;
+import com.csk.worklangcorrector.dto.CorrectionResponse;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 

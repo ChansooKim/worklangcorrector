@@ -1,4 +1,4 @@
-package com.csk.worklangcorrector.model;
+package com.csk.worklangcorrector.dto;
 
 import lombok.Builder;
 import lombok.Getter;
