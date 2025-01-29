@@ -2,6 +2,7 @@ package com.csk.worklangcorrector.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -11,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "correction_dictionary")
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor(force = true)
 public class CorrectionDictionary {

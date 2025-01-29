@@ -7,4 +7,5 @@ import lombok.Getter;
 @Builder
 public class CorrectionResponse {
     private String correction;
+    private boolean corrected;
 }

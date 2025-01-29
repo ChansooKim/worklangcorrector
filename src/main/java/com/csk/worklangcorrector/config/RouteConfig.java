@@ -18,6 +18,6 @@ public class RouteConfig {
         return RouterFunctions
                 .route(GET("/health"), healthCheckHandler::isHealthy)
                 .andRoute(GET("/"), request -> ok().bodyValue("Welcome to the home page"))
-                .andRoute(POST("/api/correct"), textCorrectionHandler::correctText);
+                .andRoute(POST("/api/correctText"), textCorrectionHandler::correctText);
     }
 }

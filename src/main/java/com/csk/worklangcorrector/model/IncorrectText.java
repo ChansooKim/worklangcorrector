@@ -2,6 +2,7 @@ package com.csk.worklangcorrector.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -9,6 +10,8 @@ import org.springframework.data.annotation.LastModifiedDate;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "incorrect_text")
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor(force = true)
 public class IncorrectText {
@@ -18,7 +21,6 @@ public class IncorrectText {
     private String wrongText;
     private String category;
     private boolean active;
-    private Long correctionId;      // correctionDictionary의 id
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime createdAt;

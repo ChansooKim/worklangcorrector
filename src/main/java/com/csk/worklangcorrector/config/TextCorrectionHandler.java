@@ -1,9 +1,9 @@
 package com.csk.worklangcorrector.config;
 
 import com.csk.worklangcorrector.dto.CorrectionRequest;
-import com.csk.worklangcorrector.dto.CorrectionResponse;
 import com.csk.worklangcorrector.service.TextCorrectionService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
@@ -18,7 +18,9 @@ public class TextCorrectionHandler {
     public Mono<ServerResponse> correctText(ServerRequest request) {
         return request.bodyToMono(CorrectionRequest.class)
                 .flatMap(service::correctText)
-                .flatMap(response->ServerResponse.ok().bodyValue(CorrectionResponse.class));
+                .flatMap(response->
+                        ServerResponse.ok()
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .bodyValue(response));
     }
-
 }
