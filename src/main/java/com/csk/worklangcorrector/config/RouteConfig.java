@@ -1,5 +1,7 @@
 package com.csk.worklangcorrector.config;
 
+import com.csk.worklangcorrector.controller.RouterConfig;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.RouterFunction;
@@ -11,10 +13,14 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
 @Configuration
+@RequiredArgsConstructor
 public class RouteConfig {
+    private final RouterConfig routerConfig;
+    private final HealthCheckHandler healthCheckHandler;
+    private final TextCorrectionHandler textCorrectionHandler;
+
     @Bean
-    public RouterFunction<ServerResponse> routes(HealthCheckHandler healthCheckHandler,
-                                                 TextCorrectionHandler textCorrectionHandler) {
+    public RouterFunction<ServerResponse> routes() {
         return RouterFunctions
                 .route(GET("/health"), healthCheckHandler::isHealthy)
                 .andRoute(GET("/"), request -> ok().bodyValue("Welcome to the home page"))
