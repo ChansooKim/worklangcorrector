@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface IncorrectTextRepository extends JpaRepository<IncorrectText, Long> {
-    Optional<IncorrectText> findByWrongText(String text);
+    Optional<IncorrectText> findByWrongText(String word);
 }
