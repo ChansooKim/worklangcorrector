@@ -17,13 +17,14 @@ import static org.springframework.web.reactive.function.server.ServerResponse.ok
 public class RouteConfig {
     private final RouterConfig routerConfig;
     private final HealthCheckHandler healthCheckHandler;
-    private final TextCorrectionHandler textCorrectionHandler;
+    private final CorrectionHandler correctionHandler;
 
     @Bean
     public RouterFunction<ServerResponse> routes() {
         return RouterFunctions
                 .route(GET("/health"), healthCheckHandler::isHealthy)
                 .andRoute(GET("/"), request -> ok().bodyValue("Welcome to the home page"))
-                .andRoute(POST("/api/correctText"), textCorrectionHandler::correctText);
+                .andRoute(POST("/api/correctWord"), correctionHandler::word)
+                .andRoute(POST("/api/correctSentence"), correctionHandler::sentence);
     }
 }
