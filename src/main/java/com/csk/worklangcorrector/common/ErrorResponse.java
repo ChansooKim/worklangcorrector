@@ -1,11 +1,3 @@
 package com.csk.worklangcorrector.common;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
-@Getter
-@AllArgsConstructor
-public class ErrorResponse {
-    private final String error;
-    private final String message;
-}
+public record ErrorResponse(String error, String message) {}
